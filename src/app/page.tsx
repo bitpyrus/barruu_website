@@ -16,7 +16,7 @@ const galleryCards = [
   {
     title: 'Code & Math',
     images: [
-      { src: '/light_code_block.jpg', alt: 'Code block with syntax highlighting' },
+      { src: '/code_block1.jpg', alt: 'Code block with syntax highlighting' },
       { src: '/dark_code_block.jpg', alt: 'Code block in dark mode' },
       { src: '/math_blocks_and_graph.jpg', alt: 'Math and graph blocks' },
     ],
