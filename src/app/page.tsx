@@ -16,7 +16,7 @@ const galleryCards = [
   {
     title: 'Code & Math',
     images: [
-      { src: '/code_block1.jpg', alt: 'Code block with syntax highlighting' },
+      { src: '/light_code_block.jpg', alt: 'Code block with syntax highlighting' },
       { src: '/dark_code_block.jpg', alt: 'Code block in dark mode' },
       { src: '/math_blocks_and_graph.jpg', alt: 'Math and graph blocks' },
     ],
@@ -71,7 +71,7 @@ export default function Home() {
               Download for Android
             </a>
             <p className="mt-4 text-sm text-gray-300">
-              You may need to enable "Install from unknown sources" in your device settings.
+              You may need to enable &quot;Install from unknown sources&quot; in your device settings.
             </p>
           </div>
         </div>
@@ -127,7 +127,7 @@ export default function Home() {
               Get the App
             </a>
             <p className="mt-4 text-sm text-gray-500">
-              You may need to enable "Install from unknown sources" in your device settings.
+              You may need to enable &quot;Install from unknown sources&quot; in your device settings.
             </p>
           </div>
         </div>

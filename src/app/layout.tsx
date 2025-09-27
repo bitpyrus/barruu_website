@@ -4,7 +4,11 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+// Configure the Inter font to use a CSS variable
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
   title: 'Barruu - The Block-Based .bipy Editor',
@@ -21,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} bg-gray-50`}>
+      <body className={`${inter.variable} bg-gray-50 font-sans`}>
         <Navbar />
         <main>{children}</main>
         <Footer />
