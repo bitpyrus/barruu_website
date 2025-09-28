@@ -4,32 +4,33 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-// Configure the Inter font to use a CSS variable
-const inter = Inter({ 
+// Configure the Inter font with modern weights and CSS variable
+const inter = Inter({
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
-  title: 'Barruu - The Block-Based .bipy Editor',
-  description: 'A powerful, proprietary editor for crafting beautiful documents with flexible content blocks using the .bipy format.',
+  title: 'Barruu - Craft Beautiful .bipy Documents',
+  description: 'Unleash your creativity with Barruu, the premier editor for .bipy files. Create rich, interactive documents with text, code, media, and more.',
   icons: {
     icon: '/app_logo.png',
   },
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} bg-gray-50 font-sans`}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+      <html lang="en">
+      <body className={`${inter.variable} bg-gray-50 font-sans antialiased`}>
+      <Navbar />
+      <main className="min-h-screen">{children}</main>
+      <Footer />
       </body>
-    </html>
+      </html>
   );
 }
