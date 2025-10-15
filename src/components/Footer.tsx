@@ -1,7 +1,7 @@
-
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+
 const Footer = () => {
     return (
         <footer className="w-full bg-gray-900 text-white py-12">
@@ -13,7 +13,7 @@ const Footer = () => {
                             <span className="text-xl font-bold">Barruu</span>
                         </div>
                         <p className="text-gray-400 text-sm">
-                            Empowering creators to build dynamic, interactive documents with the .bipy format.
+                            Create, share, and explore dynamic .bipy documents with Barruu’s vibrant community platform.
                         </p>
                     </div>
                     <div>
@@ -52,4 +52,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

@@ -3,7 +3,7 @@
 import React from 'react';
 
 const CTA = () => {
-  const apkUrl = '/barruu-app.apk'; // The path to your APK in the public folder
+  const apkUrl = '/barruu.apk'; // The path to your APK in the public folder
 
   return (
     <section className="bg-white py-20">

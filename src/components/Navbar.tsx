@@ -2,14 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
-  const apkUrl = '/barruu-app.apk';
+  const apkUrl = '/barruu.apk';
 
   const [activeSection, setActiveSection] = useState('home');
 
@@ -93,7 +91,7 @@ const Navbar = () => {
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                   </svg>
-                  Get the App
+                  Join Barruu
                 </a>
               </div>
 
@@ -139,7 +137,7 @@ const Navbar = () => {
                   className="block w-full text-center px-4 py-2 text-base font-medium text-white bg-green-600 rounded-md hover:bg-green-700 shadow-sm"
                   onClick={() => setIsMobileMenuOpen(false)}
               >
-                Get the App
+                Join Barruu
               </a>
             </div>
           </div>
@@ -152,4 +150,5 @@ const Navbar = () => {
       </>
   );
 };
+
 export default Navbar;
