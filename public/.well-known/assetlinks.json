@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bitpyrus.barruu",
+      "sha256_cert_fingerprints": [
+        "EC:B1:13:7C:C5:9E:D3:13:55:13:4A:FC:97:2E:19:75:21:FC:D9:6E:03:20:B3:33:68:35:F2:34:FC:35:40:1E"
+      ]
+    }
+  }
+]
