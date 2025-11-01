@@ -1,11 +1,15 @@
-import type { Metadata } from 'next';
+'use client';
+
 import Image from 'next/image';
 import React from 'react';
+import { motion } from 'framer-motion';
+import Stats from '@/components/Stats';
+import Testimonials from '@/components/Testimonials';
+import FAQ from '@/components/FAQ';
+import HowItWorks from '@/components/HowItWorks';
+import ScrollToTop from '@/components/ScrollToTop';
 
-export const metadata: Metadata = {
-  title: 'Barruu - Create, Share, and Connect with .bipy',
-  description: 'Barruu is your all-in-one platform for creating, sharing, and exploring dynamic .bipy documents. Combine rich text, code, media, and interactive elements, and connect with others through social feeds and discovery.',
-};
+// Note: metadata export removed as this is now a client component
 
 // Updated gallery cards with modernized descriptions reflecting new features
 const galleryCards = [
@@ -94,17 +98,28 @@ export default function Home() {
         {/* Features Section */}
         <section id="features" className="py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Unleash Your Creativity</h2>
               <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-600">
                 Barruu combines powerful document creation with social interaction for a seamless creative experience.
               </p>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {galleryCards.map((card) => (
-                  <div
+              {galleryCards.map((card, index) => (
+                  <motion.div
                       key={card.title}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      whileHover={{ y: -5 }}
                       className="bg-white rounded-2xl shadow-lg p-6 flex flex-col hover:shadow-xl transition-shadow duration-300"
                   >
                     <h3 className="text-2xl font-semibold text-gray-800 text-center mb-4">{card.title}</h3>
@@ -122,7 +137,7 @@ export default function Home() {
                           </div>
                       ))}
                     </div>
-                  </div>
+                  </motion.div>
               ))}
             </div>
           </div>
@@ -354,6 +369,18 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Stats Section */}
+        <Stats />
+
+        {/* How It Works Section */}
+        <HowItWorks />
+
+        {/* Testimonials Section */}
+        <Testimonials />
+
+        {/* FAQ Section */}
+        <FAQ />
+
         {/* Final CTA Section */}
         <section id="download" className="bg-gradient-to-b from-gray-50 to-white py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -384,6 +411,9 @@ export default function Home() {
             </p>
           </div>
         </section>
+        
+        {/* Scroll to Top Button */}
+        <ScrollToTop />
       </div>
   );
 }
