@@ -12,10 +12,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Barruu - Craft Beautiful .bipy Documents',
-  description: 'Unleash your creativity with Barruu, the premier editor for .bipy files. Create rich, interactive documents with text, code, media, and more.',
+  title: 'Barruu - Create, Share, and Connect with .bipy',
+  description: 'Barruu is your all-in-one platform for creating, sharing, and exploring dynamic .bipy documents. Combine rich text, code, media, and interactive elements, and connect with others through social feeds and discovery.',
   icons: {
     icon: '/app_logo.png',
+  },
+  keywords: ['barruu', 'bipy', 'document editor', 'android app', 'interactive documents', 'code editor', 'social platform'],
+  openGraph: {
+    title: 'Barruu - Create, Share, and Connect with .bipy',
+    description: 'Craft interactive .bipy documents and share them with a vibrant community',
+    images: ['/app_logo.png'],
   },
 };
 
