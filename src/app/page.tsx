@@ -7,6 +7,7 @@ import Stats from '@/components/Stats';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import HowItWorks from '@/components/HowItWorks';
+import ScrollToTop from '@/components/ScrollToTop';
 
 // Note: metadata export removed as this is now a client component
 
@@ -410,6 +411,9 @@ export default function Home() {
             </p>
           </div>
         </section>
+        
+        {/* Scroll to Top Button */}
+        <ScrollToTop />
       </div>
   );
 }
