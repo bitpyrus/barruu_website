@@ -117,7 +117,7 @@ const FAQ = () => {
           <p className="text-gray-600 mb-4">Still have questions?</p>
           <a
             href="#download"
-            className="inline-block text-green-600 font-semibold hover:text-green-700 transition-colors"
+            className="inline-block text-green-600 font-semibold hover:text-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-300 rounded px-2 py-1"
           >
             Download Barruu and try it yourself →
           </a>

@@ -103,7 +103,7 @@ const HowItWorks = () => {
         >
           <a
             href="#download"
-            className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold text-lg py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:-translate-y-1"
+            className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold text-lg py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-green-300"
           >
             Start Creating Today
           </a>
