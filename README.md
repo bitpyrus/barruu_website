@@ -1,8 +1,7 @@
-# Barruu App Website
+# Barruu App Website 
 
 This is the official landing page for the **Barruu** app, a powerful, block-based `.bipy` file editor for Android.
 
-This project was built with [Next.js](https://nextjs.org), [React](https://reactjs.org/), and [Tailwind CSS](https://tailwindcss.com).
 
 ## Getting Started
 
