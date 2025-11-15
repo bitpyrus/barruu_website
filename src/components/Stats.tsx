@@ -3,11 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const stats = [
-  { value: '10K+', label: 'Downloads', icon: '📥' },
-  { value: '5K+', label: 'Active Users', icon: '👥' },
-  { value: '50K+', label: '.bipy Files Created', icon: '📄' },
-  { value: '4.8', label: 'User Rating', icon: '⭐' },
+const features = [
+  { label: 'Local Storage', description: 'All your data stays on your device', icon: '📱' },
+  { label: 'No Tracking', description: 'Your privacy is protected', icon: '🔒' },
+  { label: 'Offline First', description: 'Works without internet', icon: '✈️' },
+  { label: 'Free to Use', description: 'No hidden costs', icon: '💚' },
 ];
 
 const Stats = () => {
@@ -22,17 +22,17 @@ const Stats = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Join Our Growing Community
+            Your Privacy Matters
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Thousands of creators are already using Barruu to bring their ideas to life
+            Barruu is built with privacy and simplicity at its core
           </p>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          {stats.map((stat, index) => (
+          {features.map((feature, index) => (
             <motion.div
-              key={stat.label}
+              key={feature.label}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -40,12 +40,12 @@ const Stats = () => {
               whileHover={{ scale: 1.05 }}
               className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="text-4xl mb-3">{stat.icon}</div>
-              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">
-                {stat.value}
+              <div className="text-4xl mb-3">{feature.icon}</div>
+              <div className="text-lg md:text-xl font-bold text-green-600 mb-2">
+                {feature.label}
               </div>
-              <div className="text-sm md:text-base text-gray-600 font-medium">
-                {stat.label}
+              <div className="text-sm md:text-base text-gray-600">
+                {feature.description}
               </div>
             </motion.div>
           ))}
