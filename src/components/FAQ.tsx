@@ -18,11 +18,11 @@ const faqs = [
   },
   {
     question: 'Which platforms does Barruu support?',
-    answer: 'Currently, Barruu is available for Android devices. You can download the APK directly from our website. iOS support is planned for future releases.',
+    answer: 'Currently, Barruu is available for Android devices on the Google Play Store. iOS support is planned for future releases.',
   },
   {
-    question: 'How do I install the APK?',
-    answer: 'Download the APK from our website, then enable "Install from unknown sources" in your Android device settings. Open the APK file to install. Don\'t worry - our app is completely safe!',
+    question: 'How do I install Barruu?',
+    answer: 'Simply download Barruu from the Google Play Store on your Android device. It\'s quick, easy, and completely safe!',
   },
   {
     question: 'Can I share my .bipy files with others?',

@@ -17,39 +17,39 @@ const galleryCards = [
     title: 'Dynamic Document Creation',
     description: 'Craft rich .bipy documents with text, code, media, and interactive widgets.',
     images: [
-      { src: '/editor_page.png', alt: 'Document editor interface' },
-      { src: '/question_block.png', alt: 'Interactive question block' },
+      { src: '/image/Screenshot_20251115_154239.png', alt: 'Document editor interface' },
+      { src: '/image/Screenshot_20251115_154248.png', alt: 'Interactive question block' },
     ],
   },
   {
     title: 'Social Feed & Engagement',
     description: 'Share your .bipy creations, follow creators, and engage with dynamic content.',
     images: [
-      { src: '/feed_page.png', alt: 'Social feed showcasing .bipy posts' },
-      { src: '/feed_page2.png', alt: 'Interactive feed with user engagement' },
+      { src: '/image/Screenshot_20251115_154304.png', alt: 'Social feed showcasing .bipy posts' },
+      { src: '/image/Screenshot_20251115_154323.png', alt: 'Interactive feed with user engagement' },
     ],
   },
   {
     title: 'Explore & Discover',
     description: 'Browse trending .bipy documents and discover inspiring content from the community.',
     images: [
-      { src: '/explore_page.png', alt: 'Explore page with curated .bipy files' },
-      { src: '/read_page1.png', alt: 'Reading view of a .bipy document' },
+      { src: '/image/Screenshot_20251115_154347.png', alt: 'Explore page with curated .bipy files' },
+      { src: '/image/Screenshot_20251115_154411.png', alt: 'Reading view of a .bipy document' },
     ],
   },
   {
     title: 'Rich Media & Customization',
     description: 'Enhance your documents with videos, audio, tables, and customizable themes.',
     images: [
-      { src: '/video.png', alt: 'Document with embedded video' },
-      { src: '/code.png', alt: 'Code block with syntax highlighting' },
+      { src: '/image/Screenshot_20251115_154426.png', alt: 'Document with embedded video' },
+      { src: '/image/Screenshot_20251115_154438.png', alt: 'Code block with syntax highlighting' },
     ],
   },
 ];
 
 export default function Home() {
-  const apkUrl = '/barruu-app.apk';
-  const sampleFileUrl = '/Rich Dad, Poor Dad Summary – Robert Kiyosaki Book.bipy';
+  const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.bitpyrus.barruu';
+  const sampleFileUrl = '/Survival Guide in the age of AI.bipy';
 
   return (
       <div className="min-h-screen bg-white text-gray-900">
@@ -75,11 +75,12 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                  href={apkUrl}
-                  download
+                  href={playStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold text-lg py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:-translate-y-1"
               >
-                Download for Android
+                Get it on Google Play
               </a>
               <a
                   href={sampleFileUrl}
@@ -174,7 +175,7 @@ export default function Home() {
                       <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                       <div className="w-3 h-3 rounded-full bg-green-400"></div>
                     </div>
-                    <span className="text-xs text-gray-500 ml-4">Rich_Dad_Poor_Dad_Summary.bipy</span>
+                    <span className="text-xs text-gray-500 ml-4">Survival_Guide_AI.bipy</span>
                   </div>
                   <div className="p-8 text-center">
                     <div className="flex justify-center mb-6">
@@ -186,9 +187,9 @@ export default function Home() {
                           className="rounded-lg shadow-sm"
                       />
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-3">Rich Dad, Poor Dad</h3>
+                    <h3 className="text-2xl font-semibold text-gray-800 mb-3">Survival Guide in the Age of AI</h3>
                     <p className="text-gray-600 mb-6">
-                      Explore financial wisdom with interactive exercises and shareable insights from Robert Kiyosaki’s classic.
+                      Navigate the AI-powered future with practical strategies, essential skills, and insights for thriving in a world transformed by artificial intelligence.
                     </p>
                     <a
                         href={sampleFileUrl}
@@ -212,19 +213,19 @@ export default function Home() {
                       <svg className="h-5 w-5 text-green-500 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      Interactive financial lessons with expandable tips
+                      Interactive AI literacy lessons and practical tips
                     </li>
                     <li className="flex items-start">
                       <svg className="h-5 w-5 text-green-500 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      Hands-on exercises to apply financial concepts
+                      Skills development for the AI era
                     </li>
                     <li className="flex items-start">
                       <svg className="h-5 w-5 text-green-500 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      Shareable highlights for community engagement
+                      Shareable insights for community learning
                     </li>
                   </ul>
                 </div>
@@ -392,11 +393,12 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                  href={apkUrl}
-                  download
+                  href={playStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold text-lg py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:-translate-y-1"
               >
-                Get the App
+                Get it on Google Play
               </a>
               <a
                   href={sampleFileUrl}
