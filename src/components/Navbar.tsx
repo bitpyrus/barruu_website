@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const apkUrl = '/barruu.apk';
+  const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.bitpyrus.barruu';
 
   const [activeSection, setActiveSection] = useState('home');
 
@@ -84,14 +84,15 @@ const Navbar = () => {
 
               <div className="hidden md:block">
                 <a
-                    href={apkUrl}
-                    download
+                    href={playStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-emerald-600 rounded-full hover:from-green-600 hover:to-emerald-700 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                   </svg>
-                  Join Barruu
+                  Get on Google Play
                 </a>
               </div>
 
@@ -132,12 +133,13 @@ const Navbar = () => {
                   </Link>
               ))}
               <a
-                  href={apkUrl}
-                  download
+                  href={playStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-full text-center px-4 py-2 text-base font-medium text-white bg-green-600 rounded-md hover:bg-green-700 shadow-sm"
                   onClick={() => setIsMobileMenuOpen(false)}
               >
-                Join Barruu
+                Get on Google Play
               </a>
             </div>
           </div>
