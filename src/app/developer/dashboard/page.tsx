@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { developerService, type App } from '@/lib/admin';
+import { developerService } from '@/lib/developer';
+import type { App } from '@/lib/admin';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import Link from 'next/link';
 

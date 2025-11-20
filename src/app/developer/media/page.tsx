@@ -52,7 +52,7 @@ export default function MediaLibrary() {
       setUploadData({ name: '', description: '', type: 'image' });
       fetchMedia();
     } catch (err) {
-      const error = err as { response?: { data?: { error?: string }; message?: string } };
+      const error = err as { response?: { data?: { error?: string } }; message?: string };
       alert('Error uploading media: ' + (error.response?.data?.error || error.message));
     } finally {
       setUploading(false);

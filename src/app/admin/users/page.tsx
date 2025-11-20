@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { adminService, type User } from '@/lib/auth';
+import { adminService } from '@/lib/admin';
+import type { User } from '@/lib/auth';
 import ProtectedRoute from '@/components/ProtectedRoute';
 
 export default function AdminUsers() {
