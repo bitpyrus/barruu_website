@@ -21,7 +21,13 @@ npm install
 
 ### 2. Environment Variables
 
-Create a `.env.local` file in the root directory:
+Create a `.env.local` file in the root directory (copy from `.env.local.example`):
+
+```bash
+cp .env.local.example .env.local
+```
+
+The default configuration:
 
 ```bash
 # API Configuration
@@ -34,9 +40,15 @@ NEXT_PUBLIC_APP_NAME=Barruu Store
 NEXT_PUBLIC_APP_URL=https://barruu.com
 ```
 
-### 3. Vercel Configuration
+### 3. API Proxy Configuration
 
-The `vercel.json` file is already configured with:
+The API proxy is configured in two places for seamless development and production:
+
+**For Local Development (`next.config.ts`):**
+- Rewrites `/api/*` requests to the Railway backend
+- Enables API calls to work with `npm run dev`
+
+**For Production (`vercel.json`):**
 - API proxy to forward `/api/*` requests to the backend
 - CORS headers for secure communication
 
@@ -47,6 +59,10 @@ npm run dev
 ```
 
 Visit http://localhost:3000 to see the application.
+
+### Troubleshooting
+
+If you encounter API connection issues, see [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) for detailed solutions.
 
 ## Features
 
