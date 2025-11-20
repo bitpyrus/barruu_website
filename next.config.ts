@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://barruu-store-api-production.up.railway.app/api/:path*',
+      },
+    ];
+  },
   async headers() {
     return [
       {
@@ -24,6 +32,10 @@ const nextConfig: NextConfig = {
         pathname: '**',
       },
     ],
+  },
+  // Specify the workspace root to silence turbopack warning about multiple lockfiles
+  turbopack: {
+    root: __dirname,
   },
 };
 

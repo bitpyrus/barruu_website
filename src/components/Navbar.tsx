@@ -3,13 +3,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { authService, type User } from '@/lib/auth';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.bitpyrus.barruu';
+  const [user, setUser] = useState<User | null>(null);
 
   const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    // Check if user is logged in
+    const currentUser = authService.getUser();
+    setUser(currentUser);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,17 +91,54 @@ const Navbar = () => {
               </div>
 
               <div className="hidden md:block">
-                <a
-                    href={playStoreUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-emerald-600 rounded-full hover:from-green-600 hover:to-emerald-700 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                  </svg>
-                  Get on Google Play
-                </a>
+                <div className="flex items-center gap-4">
+                  {user ? (
+                    <>
+                      {user.role === 'admin' && (
+                        <Link
+                          href="/admin/dashboard"
+                          className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-all duration-200"
+                        >
+                          Admin Dashboard
+                        </Link>
+                      )}
+                      {(user.role === 'developer' || user.role === 'admin') && (
+                        <Link
+                          href="/developer/dashboard"
+                          className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-purple-100 rounded-full hover:bg-purple-200 transition-all duration-200"
+                        >
+                          Developer Dashboard
+                        </Link>
+                      )}
+                      <button
+                        onClick={() => authService.logout()}
+                        className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-red-100 rounded-full hover:bg-red-200 transition-all duration-200"
+                      >
+                        Logout
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <Link
+                        href="/login"
+                        className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:text-green-600 transition-colors duration-200"
+                      >
+                        Login
+                      </Link>
+                      <a
+                        href={playStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-500 to-emerald-600 rounded-full hover:from-green-600 hover:to-emerald-700 shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5"
+                      >
+                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        Get on Google Play
+                      </a>
+                    </>
+                  )}
+                </div>
               </div>
 
               <div className="md:hidden flex items-center">
@@ -132,15 +177,56 @@ const Navbar = () => {
                     {item.name}
                   </Link>
               ))}
-              <a
-                  href={playStoreUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full text-center px-4 py-2 text-base font-medium text-white bg-green-600 rounded-md hover:bg-green-700 shadow-sm"
-                  onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Get on Google Play
-              </a>
+              {user ? (
+                <>
+                  {user.role === 'admin' && (
+                    <Link
+                      href="/admin/dashboard"
+                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 bg-gray-100 hover:bg-gray-200"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Admin Dashboard
+                    </Link>
+                  )}
+                  {(user.role === 'developer' || user.role === 'admin') && (
+                    <Link
+                      href="/developer/dashboard"
+                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 bg-purple-100 hover:bg-purple-200"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Developer Dashboard
+                    </Link>
+                  )}
+                  <button
+                    onClick={() => {
+                      authService.logout();
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 bg-red-100 hover:bg-red-200"
+                  >
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/login"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Login
+                  </Link>
+                  <a
+                    href={playStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-center px-4 py-2 text-base font-medium text-white bg-green-600 rounded-md hover:bg-green-700 shadow-sm"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Get on Google Play
+                  </a>
+                </>
+              )}
             </div>
           </div>
         </nav>
